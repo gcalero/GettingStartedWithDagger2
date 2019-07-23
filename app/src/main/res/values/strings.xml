@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GettingStartedWithDagger</string>
     <string name="title_activity_cristo">CristoActivity</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>

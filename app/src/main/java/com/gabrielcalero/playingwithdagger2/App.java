@@ -1,8 +1,12 @@
 package com.gabrielcalero.playingwithdagger2;
 
 import android.app.Application;
+import android.util.Log;
 
+import com.gabrielcalero.playingwithdagger2.di.AppComponent;
 import com.gabrielcalero.playingwithdagger2.di.DaggerAppComponent;
+
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -18,7 +22,9 @@ public class App extends Application implements HasAndroidInjector {
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent.builder().context(getApplicationContext()).build().inject(this);
+        AppComponent component = DaggerAppComponent.builder().context(getApplicationContext()).build();
+        component.inject(this);
+        //Log.d("DAGGER-2", "App component has this visualizer: " + component.visualizer());
     }
 
     @Override

@@ -3,15 +3,20 @@ package com.gabrielcalero.playingwithdagger2.di;
 import android.content.Context;
 
 import com.gabrielcalero.playingwithdagger2.App;
-import com.gabrielcalero.playingwithdagger2.ui.MainActivityModule;
+import com.gabrielcalero.playingwithdagger2.ui.IVisualizer;
+
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 
-@Component(modules = {AndroidInjectionModule.class, MainActivityModule.class, CristoActivityModule.class})
+@Singleton
+@Component(modules = {AndroidInjectionModule.class, GlobalModule.class, ActivityBindingModule.class})
 public interface AppComponent extends AndroidInjector<App> {
+
+    IVisualizer visualizer();
 
     @Component.Builder
     interface Builder {
@@ -19,5 +24,4 @@ public interface AppComponent extends AndroidInjector<App> {
         AppComponent build();
     }
 
-    //public Map<String, Integer> positiveNumbers();
 }

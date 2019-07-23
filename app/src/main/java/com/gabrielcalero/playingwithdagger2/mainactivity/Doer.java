@@ -1,8 +1,4 @@
-package com.gabrielcalero.playingwithdagger2;
-
-import com.gabrielcalero.playingwithdagger2.di.IDoer;
-
-import javax.inject.Inject;
+package com.gabrielcalero.playingwithdagger2.mainactivity;
 
 public class Doer implements IDoer {
 
