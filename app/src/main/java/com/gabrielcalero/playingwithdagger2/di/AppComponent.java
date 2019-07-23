@@ -1,14 +1,23 @@
 package com.gabrielcalero.playingwithdagger2.di;
 
-import com.gabrielcalero.playingwithdagger2.MainActivity;
+import android.content.Context;
 
-import javax.inject.Singleton;
+import com.gabrielcalero.playingwithdagger2.App;
+import com.gabrielcalero.playingwithdagger2.ui.MainActivityModule;
 
+import dagger.BindsInstance;
 import dagger.Component;
+import dagger.android.AndroidInjectionModule;
+import dagger.android.AndroidInjector;
 
-@Component( modules = { MyModule.class } )
-@Singleton
-public interface AppComponent {
+@Component(modules = {AndroidInjectionModule.class, MainActivityModule.class, CristoActivityModule.class})
+public interface AppComponent extends AndroidInjector<App> {
 
-    void inject (MainActivity mainActivity);
+    @Component.Builder
+    interface Builder {
+        @BindsInstance Builder context(Context context);
+        AppComponent build();
+    }
+
+    //public Map<String, Integer> positiveNumbers();
 }

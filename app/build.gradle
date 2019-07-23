@@ -25,11 +25,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     implementation 'com.google.dagger:dagger:2.23.2'
+    implementation 'com.google.android.material:material:1.0.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
 
-    //implementation 'com.google.dagger:dagger-android:2.23.2'
-    //implementation 'com.google.dagger:dagger-android-support:2.23.2' // if you use the support libraries
-    //annotationProcessor 'com.google.dagger:dagger-android-processor:2.23.2'
+    implementation 'com.google.dagger:dagger-android:2.23.2'
+    implementation 'com.google.dagger:dagger-android-support:2.23.2'
+    // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.23.2'
 
 
     testImplementation 'junit:junit:4.12'
