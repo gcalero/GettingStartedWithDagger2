@@ -4,12 +4,18 @@ import android.util.Log;
 
 import java.util.Map;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 public class Visualizer implements IVisualizer {
 
     private String TAG = Visualizer.class.getSimpleName();
 
+    @Inject
+    @Named("negative-numbers-map")
     public Map<String, Integer> numbersMap;
 
+    @Inject
     public Visualizer() {
         Log.d("DAGGER-2", "Creating a Visualizer (" + this + ")");
     }
